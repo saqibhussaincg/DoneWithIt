@@ -5,11 +5,16 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
+import {MaterialCommunityIcons} from '@expo/vector-icons'
+
+import AppText from './app/components/AppText/AppText';
+import AppButton from './app/components/AppButton';
+
 
 export default function App() {
 
   return(
-    // <WelcomeScreen />
+    <WelcomeScreen />
     // <ViewImageScreen />
 
     // === BORDERS ===
@@ -28,17 +33,52 @@ export default function App() {
     // </View>
 
     // === SHADOWS ===
-    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-      <View style={{
-        backgroundColor: "dodgerblue",
-        width: 100,
-        height: 100,
-        }}>
-      </View>
-    </View>
+    // <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+    //   <View style={{
+    //     backgroundColor: "dodgerblue",
+    //     width: 100,
+    //     height: 100,
+    //     }}>
+    //   </View>
+    // </View>
+
+    // === STYLING TEXT ===
+
+    // <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+    //   {/* <Text style={{
+    //     // fontFamily: "Poppins",
+    //     fontSize: 30,
+    //     fontStyle: 'italic',
+    //     fontWeight: '600',
+    //     color: 'tomato',
+    //     textTransform: 'capitalize',
+    //   }}>I Love React Native</Text> */}
+    //   <AppText>I Love React Native</AppText>
+    // </View>
+
+        // === ICONS ===
+
+        // <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+
+        // <MaterialCommunityIcons name='email' size={200} color="dodgerblue" />
+
+        // </View>
+
+        // === <AppText> ===
+
+        //  <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+        //  <AppText>I LOVE REACT</AppText>
+        //  </View>
+
+        // === <AppButton> ===
+
+        //  <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+        //  <AppButton title="login" onPress={() => console.log('tapped')}></AppButton>
+        //  </View>
+
 
   )
-    // <View 
+    {/* {/* // <View 
     // style={{
     //   backgroundColor: "#fff", flex: 1,
     //   }}>
@@ -56,16 +96,16 @@ export default function App() {
     //   backgroundColor: "tomato", flex: 1,
     //   }}/>
 
-    // </View>
+    // </View> */}
   
-
+{/* 
   // console.log(Dimensions.get("screen"))
   // console.log(useDimensions());
   // console.log(useDeviceOrientation());
 
   // const {landscape} = useDeviceOrientation();
 
-  // const handlePress = () => console.log('Text Cliked')
+  // const handlePress = () => console.log('Text Cliked') */}
  
 
 
@@ -159,13 +199,13 @@ export default function App() {
 console.log("app executed");
 
 
-// const styles = StyleSheet.create({
+{/* // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
 //     backgroundColor: 'lightblue',
 //     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
 //   },
-// });
+// }); */}
 
 
 
@@ -175,4 +215,4 @@ console.log("app executed");
 // alignItems: 'center',
 // justifyContent: 'center',
 
-// }
+// } */}

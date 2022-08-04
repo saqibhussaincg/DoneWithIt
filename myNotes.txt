@@ -367,6 +367,64 @@ FOR Android
 > elevation: 20,
 "android shadow per itna control nahi deta jitna ios deta hai"
 
+<=====> PADDING & MARGIN <=====> 
+> padding inside
+> margin outside
+
+"react native mai padding alag hoti hain"
+> paddingHorizontal: 10,
+> paddingLeft: 30,
+
+<=====> STYLING TEXT <=====> 
+> iOS or android k font alag hote hain.
+> expo custom fonts.
+
+<=====> ENCAPSULATING STYLES <=====> 
+> jo bhi props mai pass kara hai wo <AppText> mai show hoga as a <Text> component
+
+<=====> ICONS <=====> 
+> seacrh expo icon
+>  <MaterialCommunityIcons name='email' size={200} color="dodgerblue" />
+
+<=====> PLATFORM SPECIFIC CODE <=====> 
+> Platform.select({}) method.
+> maintain code with Platform.OS === ? : etc.
+> agar ios or android k liye alag alag fontsize etc dena ho tou os k liye use hota hai.
+
+> StyleSheet mai use hoga 1 or tareeka bhi hai.
+ ...Platform.select({
+            ios: {
+                fontSize: 20,
+                fontFamily: 'Avenir'
+            },
+            android: {
+                fontSize: 18,
+                fontFamily: "Roboto"
+            }
+        })
+
+> 2nd tareeka ye hai k alag alag files bana lenge.
+> AppText.ios.js
+> AppText.android.js
+> ye files AppText k function k andar hain tou <AppText> ka component ek hi baar use hoga per native automaticaly will detect the device and apply on it.
+
+<=====> ORGANIZING STYLES <=====> 
+
+> AppText ka folder banaya os mai > AppText wali file move kari or 1 style.js ki file banai.
+
+> style.js mai sari CSS import kara li or AppText.js mai import kara k use karlia.
+
+<=====> BUILDING THE BUTTON COMPONENT <=====> 
+
+> 
+
+
+
+
+
+
+
+
 
 
 
