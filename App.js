@@ -1,30 +1,91 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, TouchableHighlight,
-TouchableNativeFeedback, Button, Alert, Dimensions } from 'react-native';
+TouchableNativeFeedback, Button, Alert, Dimensions, StatusBar, Platform } from 'react-native';
+
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import ViewImageScreen from './app/screens/ViewImageScreen';
 
 
 export default function App() {
 
-  console.log(Dimensions.get("screen"))
+  return(
+    // <WelcomeScreen />
+    // <ViewImageScreen />
 
-  const handlePress = () => console.log('Text Cliked')
-  return (
-    // <View style={styles.container}>
-    //   <Text>Hello World</Text>
-    //   <StatusBar style="auto" />
+    // === BORDERS ===
+    // <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+    //   <View style={{
+    //     backgroundColor: "dodgerblue",
+    //     width: 100,
+    //     height: 100,
+    //     borderWidth: 10,
+    //     borderColor: 'royalblue',
+    //     borderRadius: 50,
+    //     // borderTopWidth: 20,
+    //     // borderTopLeftRadius: 50,
+    //     }}>
+    //   </View>
     // </View>
 
-    
-
-    <SafeAreaView style={styles.container}>
-
+    // === SHADOWS ===
+    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
       <View style={{
-        backgroundColor: 'dodgerblue',
-        width: '50%',
-        height: 50,
-      }}>
-
+        backgroundColor: "dodgerblue",
+        width: 100,
+        height: 100,
+        }}>
       </View>
+    </View>
+
+  )
+    // <View 
+    // style={{
+    //   backgroundColor: "#fff", flex: 1,
+    //   }}>
+
+    // <View 
+    // style={{
+    //   backgroundColor: "dodgerblue", flex: 2,
+    //   }}/>
+    // <View 
+    // style={{
+    //   backgroundColor: "gold", flex: 1,
+    //   }}/>
+    // <View 
+    // style={{
+    //   backgroundColor: "tomato", flex: 1,
+    //   }}/>
+
+    // </View>
+  
+
+  // console.log(Dimensions.get("screen"))
+  // console.log(useDimensions());
+  // console.log(useDeviceOrientation());
+
+  // const {landscape} = useDeviceOrientation();
+
+  // const handlePress = () => console.log('Text Cliked')
+ 
+
+
+
+      {/* <View 
+        style={{
+        backgroundColor: 'orange',
+        width: '100%',
+        height: '30%',
+      }}>
+      </View> */}
+
+      
+      {/* <View 
+        style={{
+        backgroundColor: 'orange',
+        width: '100%',
+        height: landscape ? "100%" : "30%",
+      }}>
+      </View> */}
 
       {/* <View style={containerStyle}>
       <Text 
@@ -89,22 +150,22 @@ export default function App() {
       />
      */}
 
-      <StatusBar style="auto" />
-    </SafeAreaView>
+      {/* <StatusBar style="auto" /> */}
+  
 
-  );
+ 
 
 }
 console.log("app executed");
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightblue',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: 'lightblue',
+//     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+//   },
+// });
 
 
 

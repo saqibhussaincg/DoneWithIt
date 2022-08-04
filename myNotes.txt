@@ -2,17 +2,381 @@
 ==== React Native ====
 
 
-Layouts
-
 Dimensions
-Iphone 4, 4s
+------------------
+(Iphone 4, 4s)
 Points 320 x 480
 Scale Factpr 2x
 Pixels 640 x 960
 View Width 150 x 2 = 300
 
-Iphone 11 Pro Max
+(Iphone 11 Pro Max)
 Points 414 x 896
 Scale 3x
 Pixels 1242 x 2688
 View Width 150 x 3
+
+============================================================================
+============================================================================
+
+Programming Languages Used
+--------------------------------
+> iOS - switch & Objective C
+> Android - Kotlin & Java
+
+> There is 2 ways to build React Native Apps
+> Expo CLI & React Native CLI
+
+> Install Expo Globaly
+> npm i -g expo-cli
+
+
+--------------------------------------------
+> Install Expo Client App On Mobile
+> Install Extension VS Code
+> React Native Tools By Microsoft
+> React-Native/React/Redux By EQuimper
+> Prettier - Code Format By Esben Petersen
+> Material Icon Theme By Philipp Kief
+--------------------------------------------
+
+
+<=====> Setting Up Development Environment <=====> 
+
+
+Install > npm i -g expo-cli
+Install > Expo Client Android Phone
+
+<=====> Your First App <=====> 
+
+> expo init DoneWithIt 
+> choose a workflow template > blank or blank(typescript)
+
+React native mai hamare paas HTML elements nahi hote
+React native k apne elements hote hain.
+eg: <View> is like a Div.
+
+
+<=====> Running On An Android Emulator <=====> 
+
+> Download Android Studio & Setup.
+
+<=====> Running On a Physical Device <=====> 
+
+> Download Expo Client From Android PlayStore
+
+
+<=====> Logging <=====> 
+> console.log('app executed'); 
+> ye sub se best tareqa hai logging karne ka.
+
+<=====> Debugging In Chrome <=====> 
+
+> Shake devive and select remote debugging is se chrome mai console mai debugging kar sakte hain per app slow kardega.
+> Bug solve karne k baad make sure karain k remote debugging app se off kar dain.
+> chrome > developer tools > (check) lagao (pause on caught exception) or phr app ko reload karenge tou chrome direct Error wali line per chala jayega.
+
+<=====> Debugging In VS CODE <=====> 
+
+> Install Extension React Native Tools By Microsoft.
+> Debug > create launch.json file > select reative native > uncheck all > check (Attach to packager).
+> Currently have single array configuration and os ka naam hai Attach to packager.
+> agar ye nahi mile tou add kar sakte hain by clicking button on side Add configuration Or go to menu > run > run configuration.
+> jis tarah chrome mai debugging karte hain line by line select kar k osi tarah ab VS Code mai bhi kar sakte hain.
+> view > debug console.
+> error ayega per nazar nahi ayega os k liye localhost set karna parhega jo debug box mai show ho raha hoga.
+> file > prefrences > settings > react-native.packager.port and change port 8081 to jo debug console mai show hoi.
+> agar dubara nahi chala tou chrome se debugging wali window band karna parhegi kyun k 1 jagah chalta hai debugger.
+> VS Code mai debug k liye ek baar mobile app ko reload karna parhega os k baad vs code mai debugger chalega.
+
+<=====> fixing Auto Import Iusse <=====> 
+
+> sometime it works and sometime not lets figure it out.
+> make sure that there is no auto import Extension.
+> add file jsconfig.json 
+{
+    "exclude" : ["node_modules"]
+}
+
+<=====> Publisihing <=====> 
+
+expo.io/@username/app
+
+> open terminal > expo publish Or 
+> Metro Bundler > Publish Project.
+> make new expo account
+> enter email, username, password.
+> success message ajaye ga.
+
+
+<=====> CORE COMPONENTS AND API <=====> 
+
+1. View = Div
+2. Text = P or H1 
+3. Image = Img
+4. Button
+5. Touchables = onPress OnClick
+6. Alert
+and so on.
+
+> reactnative.dev > API 
+ye crossplatform hain  android or ios k liye.
+
+
+<=====> <SafeAreaView> <=====> 
+
+> content ko status bar se neeche rakhta hai mtlb safe area mai rakhta hai top and bottom.
+
+<=====> <Text> <=====> 
+
+> use for displaying Text
+> Text Component have few Props
+> numberOfLines "text wrap ho k neeche aa jayega agar lamba paragraph hoga tou".
+> numberOfLines={1} kare denge tou 1 line mai rahega or .... ajaye ga text k agay.
+> onPress={handlePress} or is ko define kardo function bana kar console.log('')
+> jo bhi component banao os ki Documentation zarur read karo.
+
+<=====> <Image /> <=====> 
+
+> <Image source={require('./assets/icon.png')} /> 
+> require number return karta hai that will be reference to our image.
+> console.log(require('./assets/icon.png'));
+> that how we render local images but what about network images ?
+
+> <Image source={source={{uri:"https://picsum.photos/200/300"}} />
+> Dimensions define karne honge height and width. 
+> Documentation mai props check karen tou bauhat sare milege.
+> eg: fadeDuration={1000}, blurRadius={10}, resizeMode etc.
+
+<=====> <Touchables /> <=====> 
+
+1. Touchable Highlight
+2. Touchable Opacity
+3. Touchable FeedBack
+
+> wrap image tag in <TouchableWithoutFeeback />
+> <TouchableWithoutFeeback/> ka event hai OnPress{}
+"ye sirf touch karega jo sirf log mai pata chlaega"
+
+> <TouchableOpacity /> 
+"ab tocuh per mobile mai effect pata chalega."
+
+> <TouchableHighlight />
+"ab touch per halka sa effect chalega."
+
+> <TouchableNativeFeedback />
+"ye ios per nahi chalta."
+"It dosent work on images"
+"it works if image have k background color"
+
+<TouchableNativeFeedback onPress={() => console.log('tocuhed')}>
+<View style={{width:200, height: 70, backgroundColor:"Blue"}}>
+<TouchableNativeFeedback />
+
+<=====> <Button /> <=====> 
+<Button 
+    color="orange"
+    title="Click Me"
+    OnPress={() => console.log('button clicked')}
+/>
+
+"custom stylingg bhi kar sakte hain"
+
+<=====> <Alert /> <=====> 
+<Button 
+    title="Click Me"
+    OnPress={() => alert('button clicked')}
+/>
+
+(Alert.alert) -----------
+3 paremter leta hai
+2 string for text and 3rd array of object for Yes and No.
+
+<Button
+    title="Click Me"
+    onPress={() => 
+    Alert.alert("My Title", "My Message", [
+        {text : "Yes", onPress: () => console.log('Yes)}
+        {text : "No", onPress: () => console.log('No)}
+    ])
+    }
+/>
+
+(Alert.prompt) -----------
+3 paremter leta hai
+2 string for text and 3rd also a text component for PROMPT.
+
+"prompt sirf iOS mai chalta hai Android mai nahi."
+
+<Button
+    title="Click Me"
+    onPress={() => 
+    Alert.prompt("My Title", "My Message", text => consolo
+    .log(text))
+    }
+/>
+
+<=====> StyleSheet <=====> 
+> in React native stylesheet is like JS Object just like style-component CSS.
+
+> whenever we say (StyleSheet.create) we will pass a object.
+
+> (styles) have a property called container with have object name (container) in it.
+
+> StyleSheet.create is liye use karte hain k agar mis spell kar dain tou erros mai sahi names show kar deta hai.
+
+> stylesheet.create ye batata hai k sirf CSS generate karni hai.
+
+> agar inline CSS mai mis spell karenge tou erro nahi dega.
+
+>  array [ ] k andar bhi styles define kar sakte hain per right wala object left walay object ko overwrite kar dega.
+
+> <View style={[styles.container, containerStyle]} >
+
+
+
+<=====> Platform Specific Code <=====> 
+
+> <SafeAreaView> sirf iOS mai chalta hai.
+
+> Android k liye alag seen hai.
+> import Platform.
+> paddingTop: Platform.OS === "android" ? 20 : 0,
+
+Per ye jugaro tareka hai PROPER Tareka alag hai, proper way to use the calcute the value os status bar.
+
+> import statubar.
+> paddingTop: Platform.OS === "android" ? statubar.currentHeight : 0,
+
+<=====> LAYOUT SECTION <=====> 
+> IN THIS SECTION
+1. Dimensions
+2. Device Orientation
+3. Flexbox
+4. Absolute & Relative Positioning
+ 
+<=====> DIMENSIONS <=====> 
+
+(Iphone 4, 4s)
+Points: 320 x 480
+Scale: Factpr 2x
+Pixels: 640 x 960
+View Width: 150 x 2 = 300
+
+(Iphone 11 Pro Max)
+Points: 414 x 896
+Scale: 3x
+Pixels: 1242 x 2688
+View Width: 150 x 3 = 450
+
+import Dimensions.
+console.log(Dimensions.get("screen"));
+"to get the Dimensions of the Device"
+
+2 parameter hote hain "window" & "screen"
+window ka size screen size se chota hota hai.
+
+--- Detecting Rotation Orientation Changes ---
+
+> install npm i @react-native-community/hooks.
+> import {useDimensions} from @react-native-community/hooks.
+"jub bhi rotate karenge tou useDimensions wala hook re-calculate karega or widht bataeyaga.
+
+> useDeviceOrientation hook hai 
+> per ye object mai value dega true or false.
+> Object {
+    "landscape" : true,
+    "portrait" : false,
+}
+
+> isay Destructure kar sakte hain 
+> const {landscape} = useDeviceOrientation();
+> <View 
+        style={{
+        backgroundColor: 'orange',
+        width: '100%',
+        height: landscape ? "100%" : "30%",
+      }}>
+    </View>
+
+
+<=====> FLEX BOX <=====> 
+
+>   <View 
+    style={{
+      backgroundColor: "#fff", flex: 1,
+    }}>
+
+    <View 
+    style={{
+      backgroundColor: "gold", flex: 1,
+    }}>
+
+    <View />
+
+> flexbox jis tarah CSS mai chalta tha osi tarah is mai chal raha hai.
+
+> View ka main Div dia or os k andar self closing <View/> wala div laga k kaam karna parhega.
+
+> Flex ki jitni important properties hongi wo main container <view> mai use hongi.
+
+> Flex alag View Div mai bhi use kar sakte hain, eg: agar kisi ek Div ko chehrna ho alignSelf: "flex-start"
+
+> flexdirection: "row" // horizontal axis --
+> justifycontent: "center" // main axis
+> alignItems: "center" // secondary axis | 
+
+
+> alignContent: "center" // vertical and horizontal axis k center mai le ayega sra data jo main container mai hoga.
+
+> flexBasis: 100 equalint to width.
+> flexGrow is equal to flex.
+> Flexshrink same like flexgrow // ziada use nahi hota.
+
+
+<=====> ABSOLUTE AND RELATIVE POSITIONING <=====> 
+
+> top: 20 
+" div apne parent div k kinare se apne ap ko move karta hai. dosre div k oper bhi chal sakta hai move karte karte.
+
+> position: "abosulute" 
+" apne parent relative container ko folow karega "
+
+
+<=====> BUILDING WELCOME SCREEN <=====> 
+
+<=====> STYLE SECTION <=====> 
+1. stype properties
+2. organizing styles
+3. Platform-Specific styles
+4. icons
+
+<=====> BORDER <=====> 
+> border mai kuch itna khas nahi.
+
+<=====> SHADOW <=====> 
+> iOS or Android ki alag properties hain.
+
+FOR iOS  
+> shadowColor: "grey",
+  shadowOffset: {widht:0, height:0},
+  shadowOpacity: 1,
+  shadowRadius: 10,
+
+FOR Android
+> elevation: 20,
+"android shadow per itna control nahi deta jitna ios deta hai"
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
