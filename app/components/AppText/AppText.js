@@ -3,9 +3,9 @@ import { Text, StyleSheet, Platform } from 'react-native';
 
 import styles from './styles';
 
-function AppText({children}) {
+function AppText({children, style}) {
     return (
-        <Text style={styles.text}>{children}</Text>
+        <Text style={[styles.text, style]}>{children}</Text>
     );
 }
 
@@ -46,3 +46,7 @@ export default AppText;
 // })
 
 // jo bhi props mai pass kara hai wo <AppText> mai show hoga as a <Text> component
+
+// style ka props dia hai k isay kahi bhi use kar sakain.
+// array mai dia hai style ka props takay 2 props ek sath use kar sakain.
+// style wala prop card.js mai use kara hai.

@@ -416,7 +416,11 @@ FOR Android
 
 <=====> BUILDING THE BUTTON COMPONENT <=====> 
 
-> 
+<=====> BUILDING THE CARD COMPONENT <=====> 
+
+
+
+
 
 
 

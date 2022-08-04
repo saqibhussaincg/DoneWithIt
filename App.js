@@ -10,11 +10,12 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
 import AppText from './app/components/AppText/AppText';
 import AppButton from './app/components/AppButton';
 
+import Card from './app/components/Card';
 
 export default function App() {
 
   return(
-    <WelcomeScreen />
+    // <WelcomeScreen />
     // <ViewImageScreen />
 
     // === BORDERS ===
@@ -75,6 +76,19 @@ export default function App() {
         //  <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
         //  <AppButton title="login" onPress={() => console.log('tapped')}></AppButton>
         //  </View>
+
+        // === CARD COMPONENT ===
+        <View style={{
+          backgroundColor: '#f8f4f4',
+          padding: 20,
+          paddingTop: 100,
+        }}>
+          <Card 
+            title="Red Jacket For Sale"
+            subTitle="$100"
+            image={require("./app/assets/jacket.jpg")}
+          />
+        </View>
 
 
   )
