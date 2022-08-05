@@ -418,6 +418,53 @@ FOR Android
 
 <=====> BUILDING THE CARD COMPONENT <=====> 
 
+<=====> BUILDING THE LIST DETAIL SCREEN <=====> 
+<=====> BUILDING THE LISTING COMPONENT <=====> 
+> image hamesha source mai pass hogi.
+> props pass kar rahay hain.
+
+<=====> IMPROVING VIEW SCREEN <=====> 
+> icons lagaye bs
+
+<=====> LIST SECTION <=====> 
+> we will build 3 screens.
+> reusable component bhi banaye ge.
+
+<=====> FLAT LIST <=====>
+
+> Flatlist react native ka builtin API component hai jis k apne props bhi hain.
+"a performant interface for rendering basic, flat lists, supporting the most handy features"
+
+<=====> MESSAGES SCREEN <=====>
+> Flatlist ka use kara.
+> flat list apne andar props leta hai
+> keyextractor or render ka use kara.
+
+<=====> EXTRACTING THE SCREEN COMPONENTS <=====>
+> install a library npm i expo-constants
+
+import { Constants } from 'expo-constants';
+
+// <Screen> name ka Re-useable component bana lia jise ab kahi bhi use kar sakte hain.
+// <Safeareaview> k jagah ab <Screen> use karenge tou same kaam karega.
+
+<=====> SEPATATORS <=====>
+
+> border add karne k kaam aata hai.
+> Flatlist component has a prop called ItemSeparatorComponent={}
+
+<=====> HANDLING SELECTIONS <=====>
+> ListItem.js mai TouchableHighlight use karenge.
+> TouchableHighlight onpress k event per chalta hai
+> TouchableHighlight mai underlayColor ka builtin prop use kara touch oper color dene k liye.
+
+
+
+
+
+
+
+
 
 
 

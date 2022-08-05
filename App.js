@@ -11,12 +11,16 @@ import AppText from './app/components/AppText/AppText';
 import AppButton from './app/components/AppButton';
 
 import Card from './app/components/Card';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 export default function App() {
 
   return(
     // <WelcomeScreen />
     // <ViewImageScreen />
+    // <ListingDetailsScreen />
+    <MessagesScreen />
 
     // === BORDERS ===
     // <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
@@ -78,17 +82,17 @@ export default function App() {
         //  </View>
 
         // === CARD COMPONENT ===
-        <View style={{
-          backgroundColor: '#f8f4f4',
-          padding: 20,
-          paddingTop: 100,
-        }}>
-          <Card 
-            title="Red Jacket For Sale"
-            subTitle="$100"
-            image={require("./app/assets/jacket.jpg")}
-          />
-        </View>
+        // <View style={{
+        //   backgroundColor: '#f8f4f4',
+        //   padding: 20,
+        //   paddingTop: 100,
+        // }}>
+        //   <Card 
+        //     title="Red Jacket For Sale"
+        //     subTitle="$100"
+        //     image={require("./app/assets/jacket.jpg")}
+        //   />
+        // </View>
 
 
   )
